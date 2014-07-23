@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <title>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- styles -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- shim for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+      </script>
+    <![endif]-->
+  </head>
+  
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">
+            CFEngine Enterprise
+          </a>
+          <ul class="nav">
+            <li class="active">
+              <a href="#">
+                Design Center
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+		<div class="row">
+			<!-- left sidebar -->
+			<div class="span3">
+					<div class="input-append">
+						<input class="span2" id="appendedInputButton" type="text">
+						<button class="btn" type="button">Go!</button>
+					</div>
+					<form class="form-inline">
+						<label class="checkbox">
+							<input type="checkbox" id="checkbox"> Only show already deployed sketches
+						</label>
+					</form>
+				<ul class="unstyled">
+					<li><a href="#" data-toggle="collapse" data-target="#sketch_list_1">Databases (0/2)</a></li>
+						<ul id="sketch_list_1" class="collapse">
+							<li class="non_deployed"><a href="sketch.html" class="sketch_navigation">MySQL</a></li>
+							<li class="non_deployed"><a href="sketch.html" class="sketch_navigation">PostgreSQL</a></li>
+						</ul>
+					</li>
+					<li><a href="#" data-toggle="collapse" data-target="#sketch_list_2">Repository (1/3)</a>
+						<ul id="sketch_list_2" class="collapse">
+							<li class="non_deployed"><a href="sketch.html" class="sketch_navigation">apt</a></li>
+							<li class="non_deployed"><a href="sketch.html" class="sketch_navigation">yum client</a></li>
+							<li class="deployed"><a href="sketch.html" class="sketch_navigation">yum maintain</a></li>
+						</ul>
+					</li>
+					<li><a href="#" data-toggle="collapse" data-target="#sketch_list_3">Security (1/2)</a></li>
+						<ul id="sketch_list_3" class="collapse">
+							<li class="deployed"><a href="sketch.html" class="sketch_navigation">File integrity</a></li>
+							<li class="non_deployed"><a href="sketch.html" class="sketch_navigation">SSH</a></li>
+						</ul>
+					</li>
+					<li><a href="#" data-toggle="collapse" data-target="#sketch_list_4">Webserver (2/4)</a>
+						<ul id="sketch_list_4" class="collapse in">
+							<li class="deployed"><a href="sketch.html" class="sketch_navigation">Apache</a></li>
+							<li class="deployed"><a href="sketch.html" class="sketch_navigation">Apache VHOSTs</a></li>
+							<li class="non_deployed"><a href="sketch.html" class="sketch_navigation">curl</a></li>
+							<li class="non_deployed"><a href="sketch.html" class="sketch_navigation">nginx</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- main content area -->
+			<div class="span7">
+				<h1>Sketch information</h1>
+				<h2>Apache</h2>
+				<p>This sketch installs and starts the Apache webserver.</p><br>
+				<h4>Available input</h4>
+				<ol>
+					<li>Ports to listen to<br />
+						<em>Input type: list, numeric</em>
+					</li>
+				</ol><br>
+				<h3>Existing deployments</h3>
+				<div class="accordion" id="accordion">
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+					        	<h4>webserver_emea</h4>
+							</a>
+						</div>
+						<div id="collapseOne" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div class="row">
+									<div class="span3">
+										<h4>Inputs set</h4>
+										<p><strong>Ports to listen to:</strong>&nbsp; 80
+										</p>
+									</div>
+									<div class="span2 offset1">
+										<span class="label label-success pull-right">Status: OK</span>
+									</div>
+								</div>
+								<h4>Hosts with this deployment (12)</h4>
+								<div class="row">
+									<div class="span3">
+										<ul class="unstyled">
+											<li>host_name_1</li>
+											<li>host_name_2</li>
+											<li>host_name_3</li>
+											<li>host_name_4</li>
+											<li>host_name_5</li>
+											<li>host_name_6</li>
+										</ul>
+									</div>
+									<div class="span3">
+										<ul class="unstyled">
+											<li>host_name_7</li>
+											<li>host_name_8</li>
+											<li>host_name_9</li>
+											<li>host_name_10</li>
+											<li>host_name_11</li>
+											<li>host_name_12</li>
+										</ul>
+									</div>
+								</div>
+								<div class="row">
+									<div class="span6">
+										<p><a href="#">Deployment log</a></p>
+									</div>
+								</div>
+								<div class="row buttons">
+									<div class="span6">
+										<p class="pull-right">
+											<a href="#deleteSketch" class="btn" role="button" data-toggle="modal">Delete</a>
+											<a href="config.html" class="btn btn-primary" type="submit">Edit</a>
+										</p>
+									</div>
+								</div>
+				      		</div>
+				    	</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+					        	<h4>webserver_na_ma<span class="badge badge-warning pull-right">2</span></h4>
+							</a>
+						</div>
+						<div id="collapseTwo" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div class="row">
+									<div class="span3">
+										<h4>Inputs set</h4>
+										<p><strong>Ports to listen to:</strong>&nbsp; 8080
+										</p>
+									</div>
+									<div class="span2 offset1">
+										<span class="label label-warning pull-right">Status: Under Deployment</span>
+										<p class="eta pull-right">27 min remaining
+										</p>
+									</div>
+								</div>
+								<h4>Hosts with this deployment (12)</h4>
+								<div class="row">
+									<div class="span3">
+										<ul class="unstyled">
+											<li>host_name_1</li>
+											<li>host_name_2</li>
+											<li><a href="#deploySketch" data-toggle="modal" class="warning">host_name_3</a></li>
+											<li>host_name_4</li>
+											<li>host_name_5</li>
+											<li>host_name_6</li>
+										</ul>
+									</div>
+									<div class="span3">
+										<ul class="unstyled">
+											<li>host_name_7</li>
+											<li><a href="#deploySketch" data-toggle="modal" class="warning">host_name_8</a></li>
+											<li>host_name_9</li>
+											<li>host_name_10</li>
+											<li>host_name_11</li>
+											<li>host_name_12</li>
+										</ul>
+									</div>
+								</div>
+								<div class="row">
+									<div class="span6">
+										<p><a href="#">Deployment log</a></p>
+									</div>
+								</div>
+								<div class="row buttons">
+									<div class="span6">
+										<p class="pull-right">
+											<a href="#deleteSketch" class="btn" role="button" data-toggle="modal">Delete</a>
+											<a href="config.html" class="btn btn-primary" type="submit">Edit</a>
+										</p>
+									</div>
+								</div>
+				      		</div>
+				    	</div>
+					</div>
+					<div class="accordion-group">
+						<div class="accordion-heading">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+					        	<h4>webserver_na_ca<span class="badge badge-important pull-right">3</span></h4>
+							</a>
+						</div>
+						<div id="collapseThree" class="accordion-body collapse">
+							<div class="accordion-inner">
+								<div class="row">
+									<div class="span3">
+										<h4>Inputs set</h4>
+										<p><strong>Ports to listen to:</strong>&nbsp; 8080, 8888
+										</p>
+									</div>
+									<div class="span2 offset1">
+										<span class="label label-important pull-right">Status: Failed</span>
+									</div>
+								</div>
+								<h4>Hosts with this deployment (12)</h4>
+								<div class="row">
+									<div class="span3">
+										<ul class="unstyled">
+											<li>host_name_1</li>
+											<li><a href="#failedSketch" data-toggle="modal" class="failed">host_name_2</a></li>
+											<li>host_name_3</li>
+											<li><a href="#failedSketch" data-toggle="modal" class="failed">host_name_4</a></li>
+											<li>host_name_5</li>
+											<li>host_name_6</li>
+										</ul>
+									</div>
+									<div class="span3">
+										<ul class="unstyled">
+											<li>host_name_7</li>
+											<li>host_name_8</li>
+											<li>host_name_9</li>
+											<li><a href="#failedSketch" data-toggle="modal" class="failed">host_name_10</a></li>
+											<li>host_name_11</li>
+											<li>host_name_12</li>
+										</ul>
+									</div>
+								</div>
+								<div class="row">
+									<div class="span6">
+										<p><a href="#">Deployment log</a></p>
+									</div>
+								</div>
+								<div class="row buttons">
+									<div class="span6">
+										<p class="pull-right">
+											<a href="#deleteSketch" class="btn" role="button" data-toggle="modal">Delete</a>
+											<a href="config.html" class="btn btn-primary" type="submit">Edit</a>
+										</p>
+									</div>
+								</div>
+				      		</div>
+				    	</div>
+					</div>
+				</div>
+			</div>
+			<!-- right sidebar -->
+			<div class="span2 ">
+				<h5>Supported Operating Systems</h4>
+				<ul class="unstyled">
+					<li>Ubuntu 10.04</li>
+					<li>Debian 6</li>
+				</ul>
+				<h5>Sketch Details</h4>
+				<ul class="unstyled">
+					<li>Version: 1.0.1</li>
+					<li>Authoring Date: 2012-10-23</li>
+					<li>Author: Diego Zamboni</li>
+				</ul>
+				<h5>Tags</h4>
+				<div>
+					<span class="label"><a href="#">web</a></span>&nbsp;</span>
+					<span class="label"><a href="#">apache</a>&nbsp;</span>
+				</div>				
+			</div>
+		</div>
+		<!-- lower main content area -->
+		<div class="row buttons">
+			<div class="span7 offset3">
+				<p class="pull-right">
+					<a href="config.html" class="btn btn-primary" role="button">New deployment</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<div>
+				<p>Prototype v1</p>
+			</div>
+		</div>
+	</footer>
+	
+	<!-- modal for confirmation before delete -->
+	<div id="deleteSketch" class="modal hide">
+		<div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="myModalLabel">Delete this sketch?</h3>
+		  </div>
+		  <div class="modal-body">
+				<p>Are you sure you want to delete this sketch? This action can only be undone if you have version control enabled.</p>
+		  </div>
+		  <div class="modal-footer">
+		    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+		    <a href="sketch.html"><button class="btn btn-danger">Delete</button></a>
+		  </div>
+	</div>
+	
+	<!-- modal for hosts under deployment -->
+	<div id="deploySketch" class="modal hide">
+		<div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="myModalLabel">Hosts currently under deployment</h3>
+		  </div>
+		  <div class="modal-body">
+				<p>
+					<strong>Host host_name_3</strong><br />
+					Time remaining until deployed: 3 mins
+				</p>
+				<p>
+					<strong>Host host_name_8</strong><br />
+					Time remaining until deployed: 27 mins
+				</p>
+		  </div>
+		  <div class="modal-footer">
+		    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+		  </div>
+	</div>
+	
+	<!-- modal for failed hosts-->
+	<div id="failedSketch" class="modal hide">
+		<div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="myModalLabel">Failed deployments</h3>
+		  </div>
+		  <div class="modal-body">
+				<p>
+					<strong>Host host_name_2</strong><br />
+					Fancy error message
+				</p>
+				<p>
+					<strong>Host host_name_4</strong><br />
+					Dang! Something happened...
+				</p>
+				<p>
+					<strong>Host host_name_10</strong><br />
+					Hm. Something funny went wrong
+				</p>
+		  </div>
+		  <div class="modal-footer">
+		    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+		  </div>
+	</div>
+	
+	<!-- JavaScript stuffs -->
+    <script src="assets/js/jquery-1.9.0.min.js">
+    </script>
+    <script src="assets/js/bootstrap.min.js">
+    </script>
+	<script src="assets/js/custom.js">
+    </script>
+  </body>
+
+</html>
